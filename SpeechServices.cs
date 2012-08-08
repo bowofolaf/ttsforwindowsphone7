@@ -69,8 +69,8 @@ namespace WPhoneSpeechTools
             _clientSecret = clientSecret;
             _serviceClient = new LanguageServiceClient();
             HookupEvents();
-            admAuth = new AdmAuthentication(_clientID, _clientSecret);
-            admAuth.returnToken += RetrieveToken;
+            admAuth = new AdmAuthentication(_clientID, _clientSecret, RetrieveToken);
+            //admAuth.returnToken += RetrieveToken;
         }
 
         
@@ -106,7 +106,10 @@ namespace WPhoneSpeechTools
                 _quality = "MinSize";
             if (!String.IsNullOrWhiteSpace(text))
             {
-                _textToSpeak = text;
+                lock (_textToSpeak)
+                {
+                    _textToSpeak = text;
+                }
                 admAuth.GetToken();
                 _action = Action.Speak;
             }

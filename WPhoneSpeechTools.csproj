@@ -68,6 +68,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Speech Service.cd" />
     <None Include="Service References\ServiceMSTranslator\soap.wsdl" />
     <None Include="Service References\ServiceMSTranslator\soap.xsd">
       <SubType>Designer</SubType>
