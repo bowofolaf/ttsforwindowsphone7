@@ -6,6 +6,8 @@ I built a separate library for this purpose https://github.com/bowofolaf/msttoke
 
 Currently only speaking in English is supported.
 
+- Make sure to set the language property of the SpeechService object to "en" for English. This page shows all available languages http://msdn.microsoft.com/en-us/library/hh456380.aspx, a method is presently being developed to fetch this dynamically.
+
 Features to be added
 
 * Translation
